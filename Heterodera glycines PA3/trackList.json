@@ -1,0 +1,78 @@
+{
+    "formatVersion" : 1,
+    "refSeqs": "https://db.scnbase.org/api/jbrowse/refSeqs.json?soType=chromosome&organism=Heterodera glycines PA3",
+    "names" : {
+       "type" : "REST",
+       "url" : "https://db.scnbase.org/api/jbrowse/names"
+    },
+    "tracks" : [
+        {
+          "category": "1. Reference sequence",
+          "useAsRefSeqStore": true,
+          "label":      "ref_seq",
+          "key":        "REST Reference Sequence",
+          "type":       "JBrowse/View/Track/Sequence",
+          "storeClass": "JBrowse/Store/SeqFeature/REST",
+          "baseUrl":    "https://db.scnbase.org/api/jbrowse",
+          "query": {
+             "organism": "Heterodera glycines PA3"
+          }
+        },
+        {
+          "category": "2. Genes",
+          "baseUrl" : "https://db.scnbase.org/api/jbrowse",
+          "key" : "Gene",
+          "label" : "gene",
+          "query" : {
+             "organism": "Heterodera glycines PA3",
+             "soType" : "gene"
+          },
+          "storeClass" : "JBrowse/Store/SeqFeature/REST",
+          "type" : "JBrowse/View/Track/CanvasFeatures",
+          "style": {
+              "label": "name,id",
+              "description": "display"
+          }
+       },
+      {
+          "category": "2. Genes",
+          "baseUrl" : "https://db.scnbase.org/api/jbrowse",
+          "key" : "Transcript",
+          "label" : "transcripts",
+          "query" : {
+             "organism": "Heterodera glycines PA3",
+             "soType" : "mRNA"
+          },
+          "storeClass" : "JBrowse/Store/SeqFeature/REST",
+          "type" : "JBrowse/View/Track/CanvasFeatures",
+          "style": {
+              "label": "name,id",
+              "description": "display"
+          }
+       },
+       {
+          "category": "2. Genes",
+          "baseUrl" : "https://db.scnbase.org/api/jbrowse",
+          "key" : "CDS",
+          "label" : "CDS",
+          "query" : {
+             "organism": "Heterodera glycines PA3",
+             "soType" : "CDS"
+          },
+          "storeClass" : "JBrowse/Store/SeqFeature/REST",
+          "type" : "JBrowse/View/Track/CanvasFeatures"
+      },
+       {
+          "category": "3. Variation",
+          "baseUrl" : "https://db.scnbase.org/api/jbrowse",
+          "key" : "SNV",
+          "label" : "SNV",
+          "query" : {
+             "organism" : "Heterodera glycines PA3",
+             "soType" : "SNV"
+          },
+          "storeClass" : "JBrowse/Store/SeqFeature/REST",
+          "type" : "JBrowse/View/Track/HTMLFeatures"
+      }
+    ]
+ }
